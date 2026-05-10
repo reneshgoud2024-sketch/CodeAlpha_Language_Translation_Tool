@@ -1,5 +1,8 @@
 # 🌐 LinguaFlow — AI Language Translation Tool
 
+## 🚀 Live Demo
+[Click here to try LinguaFlow](https://reneshgoud2024-sketch.github.io/CodeAlpha_Language_Translation_Tool/)
+
 > **CodeAlpha AI Internship — Task 1**
 > A professional, modern language translation web application powered by AI.
 
@@ -141,5 +144,4 @@ This project is open source and available under the [MIT License](LICENSE).
 </p>
 
 
-## 🚀 Live Demo
-[Click here to try LinguaFlow](https://reneshgoud2024-sketch.github.io/CodeAlpha_Language_Translation_Tool/)
+
