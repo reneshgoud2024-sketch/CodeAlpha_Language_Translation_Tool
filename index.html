@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LinguaFlow — A professional AI-powered language translation tool. Translate text between 20+ languages instantly with text-to-speech support.">
+    <meta name="keywords" content="language translation, AI translator, CodeAlpha, translation tool, multilingual">
+    <meta name="author" content="CodeAlpha Intern">
+    <title>LinguaFlow — AI Language Translation Tool</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+        <div class="bg-orb bg-orb-4"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="app-header" id="app-header">
+            <div class="logo-section">
+                <div class="logo-icon" id="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="url(#logoGrad)" stroke-width="2.5"/>
+                        <path d="M10 16 L16 10 L22 16 L16 22 Z" fill="url(#logoGrad)" opacity="0.3"/>
+                        <path d="M12 16 L16 12 L20 16 L16 20 Z" fill="url(#logoGrad)"/>
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#818cf8"/>
+                                <stop offset="100%" stop-color="#c084fc"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>LinguaFlow</h1>
+                    <span class="logo-subtitle">AI Translation Engine</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <a href="https://github.com" target="_blank" class="github-link" id="github-link" title="View on GitHub" aria-label="GitHub Repository">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- Translation Card -->
+        <main class="translator-card" id="translator-card">
+
+            <!-- Language Selector Bar -->
+            <div class="language-bar" id="language-bar">
+                <div class="lang-select-wrapper">
+                    <label for="source-language" class="sr-only">Source Language</label>
+                    <select id="source-language" class="lang-select">
+                        <option value="auto" selected>🔍 Auto Detect</option>
+                        <option value="en">🇬🇧 English</option>
+                        <option value="es">🇪🇸 Spanish</option>
+                        <option value="fr">🇫🇷 French</option>
+                        <option value="de">🇩🇪 German</option>
+                        <option value="it">🇮🇹 Italian</option>
+                        <option value="pt">🇧🇷 Portuguese</option>
+                        <option value="ru">🇷🇺 Russian</option>
+                        <option value="zh-CN">🇨🇳 Chinese (Simplified)</option>
+                        <option value="ja">🇯🇵 Japanese</option>
+                        <option value="ko">🇰🇷 Korean</option>
+                        <option value="ar">🇸🇦 Arabic</option>
+                        <option value="hi">🇮🇳 Hindi</option>
+                        <option value="bn">🇧🇩 Bengali</option>
+                        <option value="ta">🇮🇳 Tamil</option>
+                        <option value="te">🇮🇳 Telugu</option>
+                        <option value="ur">🇵🇰 Urdu</option>
+                        <option value="tr">🇹🇷 Turkish</option>
+                        <option value="nl">🇳🇱 Dutch</option>
+                        <option value="pl">🇵🇱 Polish</option>
+                        <option value="sv">🇸🇪 Swedish</option>
+                        <option value="th">🇹🇭 Thai</option>
+                        <option value="vi">🇻🇳 Vietnamese</option>
+                        <option value="id">🇮🇩 Indonesian</option>
+                        <option value="ms">🇲🇾 Malay</option>
+                    </select>
+                </div>
+
+                <button class="swap-btn" id="swap-languages" title="Swap Languages" aria-label="Swap source and target languages">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 16l-4-4 4-4"/>
+                        <path d="M17 8l4 4-4 4"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                    </svg>
+                </button>
+
+                <div class="lang-select-wrapper">
+                    <label for="target-language" class="sr-only">Target Language</label>
+                    <select id="target-language" class="lang-select">
+                        <option value="en">🇬🇧 English</option>
+                        <option value="es" selected>🇪🇸 Spanish</option>
+                        <option value="fr">🇫🇷 French</option>
+                        <option value="de">🇩🇪 German</option>
+                        <option value="it">🇮🇹 Italian</option>
+                        <option value="pt">🇧🇷 Portuguese</option>
+                        <option value="ru">🇷🇺 Russian</option>
+                        <option value="zh-CN">🇨🇳 Chinese (Simplified)</option>
+                        <option value="ja">🇯🇵 Japanese</option>
+                        <option value="ko">🇰🇷 Korean</option>
+                        <option value="ar">🇸🇦 Arabic</option>
+                        <option value="hi">🇮🇳 Hindi</option>
+                        <option value="bn">🇧🇩 Bengali</option>
+                        <option value="ta">🇮🇳 Tamil</option>
+                        <option value="te">🇮🇳 Telugu</option>
+                        <option value="ur">🇵🇰 Urdu</option>
+                        <option value="tr">🇹🇷 Turkish</option>
+                        <option value="nl">🇳🇱 Dutch</option>
+                        <option value="pl">🇵🇱 Polish</option>
+                        <option value="sv">🇸🇪 Swedish</option>
+                        <option value="th">🇹🇭 Thai</option>
+                        <option value="vi">🇻🇳 Vietnamese</option>
+                        <option value="id">🇮🇩 Indonesian</option>
+                        <option value="ms">🇲🇾 Malay</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Translation Panels -->
+            <div class="translation-panels" id="translation-panels">
+
+                <!-- Source Panel -->
+                <div class="panel source-panel" id="source-panel">
+                    <div class="panel-header">
+                        <span class="panel-label">Source Text</span>
+                        <span class="char-counter" id="char-counter">0 / 5000</span>
+                    </div>
+                    <textarea
+                        id="source-text"
+                        class="text-area"
+                        placeholder="Type or paste your text here..."
+                        maxlength="5000"
+                        spellcheck="true"
+                        aria-label="Source text to translate"
+                    ></textarea>
+                    <div class="panel-actions">
+                        <button class="action-btn" id="clear-source" title="Clear text" aria-label="Clear source text">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn" id="paste-source" title="Paste from clipboard" aria-label="Paste from clipboard">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn" id="speak-source" title="Listen to source text" aria-label="Text to speech for source">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Translate Button (center) -->
+                <div class="translate-btn-wrapper">
+                    <button class="translate-btn" id="translate-btn" aria-label="Translate text">
+                        <span class="btn-text">Translate</span>
+                        <span class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </span>
+                        <span class="btn-loader" id="btn-loader"></span>
+                    </button>
+                </div>
+
+                <!-- Target Panel -->
+                <div class="panel target-panel" id="target-panel">
+                    <div class="panel-header">
+                        <span class="panel-label">Translation</span>
+                        <span class="match-badge" id="match-badge" title="Translation confidence"></span>
+                    </div>
+                    <div
+                        id="target-text"
+                        class="text-area target-display"
+                        aria-label="Translated text output"
+                        role="region"
+                    >
+                        <span class="placeholder-text">Translation will appear here...</span>
+                    </div>
+                    <div class="panel-actions">
+                        <button class="action-btn" id="copy-target" title="Copy translation" aria-label="Copy translated text">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            <span class="copy-feedback" id="copy-feedback">Copied!</span>
+                        </button>
+                        <button class="action-btn" id="speak-target" title="Listen to translation" aria-label="Text to speech for translation">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                            </svg>
+                        </button>
+                        <button class="action-btn" id="download-target" title="Download translation" aria-label="Download translated text">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Translation History -->
+            <div class="history-section" id="history-section">
+                <div class="history-header">
+                    <h2 class="history-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        Recent Translations
+                    </h2>
+                    <button class="clear-history-btn" id="clear-history" title="Clear history" aria-label="Clear translation history">Clear All</button>
+                </div>
+                <div class="history-list" id="history-list">
+                    <div class="history-empty" id="history-empty">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3">
+                            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <p>No translations yet. Start typing above!</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer" id="app-footer">
+            <p>Built with ❤️ for <strong>CodeAlpha</strong> AI Internship &bull; Powered by MyMemory Translation API</p>
+        </footer>
+
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon"></span>
+        <span class="toast-message" id="toast-message"></span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
